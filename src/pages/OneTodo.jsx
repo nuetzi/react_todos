@@ -14,9 +14,13 @@ export default function OneTodo () {
         .then(res => setOneTodo(res.data))
     }, []);
 
+    const goBack = () => {
+        navigate("/");
+    }
+
     const editItem = () => {
         editTodo(id);
-        navigate(`/${id}`);
+        navigate(`/${id}/edit`);
     }
 
     const deleteItem = () => {
@@ -27,7 +31,11 @@ export default function OneTodo () {
     return(
         <div>
             <h3>{oneTodo.description}</h3>
-            <button onClick={editItem}>EDIT</button>
+            Complete? <input type="checkbox" checked={oneTodo.complete} /> <br/>
+            <br/>
+            <button onClick={goBack}>RETURN</button> <br/>
+            <br/>
+            <button onClick={editItem}>EDIT</button> <br/>
             <button onClick={deleteItem}>DELETE</button>
         </div>
     );

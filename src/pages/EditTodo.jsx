@@ -26,7 +26,9 @@ export default function EditTodo () {
             <form onSubmit={changeTodo}>
                 <input type="text" name="description" defaultValue={data.description} /> <br/>
                 Completed:
-                <input type="checkbox" name="complete" defaultChecked={data.complete} />
+                <input type="checkbox" name="complete" defaultChecked={data.complete} /> <br/>
+                <br/>
+                <input type="submit" />
             </form>
         </div>
     );

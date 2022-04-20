@@ -1,5 +1,5 @@
 import axios from "axios";
-const URL = "http://localhost:3001/todos";
+const URL = "http://localhost:3001/todos/";
 
 export function getTodos () {
     const response = axios.get(URL);
@@ -7,12 +7,12 @@ export function getTodos () {
 };
 
 export function getOneTodo(id) {
-    const response = axios.get(`${URL}/${id}`);
+    const response = axios.get(`${URL}${id}`);
     return response;
 };
 
 export function deleteTodo(id) {
-    const response = axios.delete(`${URL}/${id}`);
+    const response = axios.delete(`${URL}${id}`);
     return response;
 };
 
@@ -22,6 +22,6 @@ export function createTodo(id) {
 };
 
 export function editTodo(id, updatedTodo) {
-    const response = axios.put(`${URL}/${id}`, updatedTodo);
+    const response = axios.put(`${URL}${id}`, updatedTodo);
     return response;
 };

@@ -10,16 +10,18 @@ export default function Todos () {
             .catch((err) => err.message)
     }, []);
 
-    console.log(Todos)
-
     return (
         <div className="todosContainer">
             <ul>
             {todos.map((each, i) => {
                 return(
-                    <li key={i}>
-                        <a href={`${each._id}`} > {each.description} </a>
-                    </li>
+                    (each.complete)
+                    ?   <li key={i} style={{textDecoration:"line-through"}}>
+                            <a href={`${each._id}`} > {each.description}</a>
+                        </li>
+                    :   <li key={i} style={{backgroundColor:"yellow"}}>
+                            <a href={`${each._id}`} > {each.description} </a>
+                        </li>
                 );
             })}
             </ul>                

@@ -4,12 +4,13 @@ import Home from "./pages/Home";
 import OneTodo from "./pages/OneTodo";
 import NewTodo from "./pages/NewTodo";
 import ErrorPage from "./pages/ErrorPage";
+import EditTodo from './pages/EditTodo';
 
 export default function App () {
   return (
     <Router>
       <nav>
-        <Link to="/">Home</Link>
+        <Link to="/">Home</Link> &nbsp; | &nbsp;
         <Link to="/new">New</Link>
       </nav>
       <br/>
@@ -18,6 +19,7 @@ export default function App () {
         <Route path="/" element={<Home />} />
         <Route path="/new" element={<NewTodo/>} />
         <Route path="/:id" element={<OneTodo />} />
+        <Route path="/:id/edit" element={<EditTodo />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
